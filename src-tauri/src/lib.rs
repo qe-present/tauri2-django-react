@@ -21,6 +21,7 @@ fn start(app_handle: AppHandle) -> Result<Option<CommandChild>, String> {
 
 fn stop(sidecar_child: State<Arc<Mutex<Option<CommandChild>>>>) -> bool {
     if let Some(child) = sidecar_child.lock().unwrap().take() {
+        println!("准备关闭manage.exe进程");
         // 尝试杀死进程
         if let Err(_) = child.kill() {
             println!("关闭失败");
