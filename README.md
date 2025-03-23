@@ -12,4 +12,5 @@ pnpm run tauri:dev
 ```shell
 pnpm run tauri:build
 ```
-
+# result
+![img.png](img.png)
